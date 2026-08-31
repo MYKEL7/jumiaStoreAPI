@@ -1,6 +1,5 @@
 //Mongoode & bcrypt is imported
 const mongose = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 const productSchema = new mongose.Schema({
     name: {
@@ -23,9 +22,18 @@ const productSchema = new mongose.Schema({
         type: String,
         required: true
     },
+    IsAvailable: {
+        type: Boolean,
+        default: true
+    },
     color: {
         type: String,
+    },
+    image: {
+        type: String,
+        required: false
     }
+
 
 },
 {timestamps: true}

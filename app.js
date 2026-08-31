@@ -2,11 +2,10 @@ const express = require('express');
 const app = express();
 
 const dotenv = require('dotenv');
+dotenv.config(); // Load environment variables from .env file
 
 const ProductRoute = require('./routes/productRoute');
 const UserRoute = require('./routes/userRoute');
-
-dotenv.config(); // Load environment variables from .env file
 
 app.use(express.json()); //middleware to parse JSON request bodies
 
@@ -14,7 +13,7 @@ app.use(express.json()); //middleware to parse JSON request bodies
 app.use('/products', ProductRoute); //use the product route for all requests starting with /products
 app.use('/users', UserRoute);
 
-const connectDB = require('./Config/databaseConfig');
+const connectDB = require('./config/databaseConfig');
 connectDB(); // Connect to MongoDB
 
 app.listen(process.env.PORT, () => {
