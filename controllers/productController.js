@@ -25,7 +25,7 @@ exports.createProduct = async (req, res) => {
         const subject = 'New Product Created';
         
         const text = `A new product has been created: here is your otp: ${otp}\n\nName: ${name}\nSize: ${size}\nDescription: ${description}\nPrice: ${price}\nQuantity: ${quantity}\nColor: ${color}`;
-        await sendEmail('kachi@tsacademyonline.com', subject, text);
+        await sendEmail('onyememichael@gmail.com', subject, text);
 
 
         res.status(201).json({ message: 'Product created successfully', product });
